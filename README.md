@@ -1,4 +1,4 @@
-# filesearch (learning node, javscript and more...)
+# filesearch (learning node, javascript and more...)
 Javascript Node project to search files in folder
 
 Deps:
