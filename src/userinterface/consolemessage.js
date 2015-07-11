@@ -29,7 +29,7 @@ var ConsoleInteraction = (function () {
             rl.write(msg);
             rl.close();
         };
-    };
+    }
 
     return ConsoleInteraction;
 })();

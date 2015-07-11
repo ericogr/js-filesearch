@@ -2,11 +2,11 @@ var File = require('./filesystem/file');
 var ConsoleMessage = require('./userinterface/consolemessage');
 var FileFinder = require('./filesystem/filefinder');
 
-"use strict";
-
 var cm = new ConsoleMessage();
 
 cm.inputMessage("Filename to search: ", function (file) {
+	"use strict";
+	
     var fi = new File(file);
 
     cm.inputMessage("Local (folder): ", function (folder) {

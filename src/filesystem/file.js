@@ -6,7 +6,7 @@ var File = (function() {
 
 		this.getName = function() {
 			return _filename;
-		}
+		};
 	}
 
 	return File;
