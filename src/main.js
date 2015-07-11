@@ -1,15 +1,22 @@
-"use strict"
-
 var File = require('./filesystem/file');
+var ConsoleMessage = require('./userinterface/consolemessage');
+var FileFinder = require('./filesystem/filefinder');
 
-var file1 = new File('/tmp1');
-var file2 = new File('/tmp2');
+"use strict";
 
+var cm = new ConsoleMessage();
 
-console.info('hello node: ' + file1.getName());
-console.info('hello node: ' + file2.getName());
+cm.inputMessage("Filename to search: ", function (file) {
+    var fi = new File(file);
 
-file1._name = "/shit";
+    cm.inputMessage("Local (folder): ", function (folder) {
+        var fo = new File(folder);
+        var ff = new FileFinder();
 
-console.info(file1._name);
-console.info(file2._name);
+        ff.find(fo, fi, function (file) {
+            cm.messageLine("found: " + file.getName());
+        }, function () {
+            process.exit(0);
+        });
+    });
+});

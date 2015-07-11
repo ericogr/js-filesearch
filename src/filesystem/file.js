@@ -2,15 +2,12 @@ var File = (function() {
 	"use strict";
 
 	function File(filename) {
-		Object.defineProperty(this, "_name", {
-		    value: filename,
-		    writable: false
-		});
-	}
+		var _filename = filename;
 
-	File.prototype.getName = function() {
-		return this._name;
-	};
+		this.getName = function() {
+			return _filename;
+		}
+	}
 
 	return File;
 })();
